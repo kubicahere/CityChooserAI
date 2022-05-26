@@ -90,8 +90,6 @@ namespace CityChooserAI.ViewModel
                 return _checkClick;
             }
         }
-
-
         #endregion
     }
 }

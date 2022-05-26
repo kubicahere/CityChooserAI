@@ -37,4 +37,5 @@
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
         </Button>
     </Grid>
+    <!--TODO DEPENDECIES ETC XAML.CS-->
 </UserControl>
