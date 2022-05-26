@@ -3,10 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:CityChooserAI.View"
+             xmlns:local="clr-namespace:CityChooserAI.View" 
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="600" Background="White">
     <Grid>
-            
+        <ComboBox x:Name="continentName" x:FieldModifier="private" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="10,50,0,0" Width="150"
+                  SelectionChanged="RaiseContinentChangedEvent"
+                  ItemsSource="{Binding Path=continents, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+            RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
+                  SelectedItem="{Binding Path=selectedContinent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+            RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
+        </ComboBox>
+        <Label Content="Feature List:" Margin="10,150,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <ListBox x:Name="featureList" x:FieldModifier="private" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" Height="250" Width="150"
+                 SelectionChanged="RaiseFeatureListChangedEvent"
+                 ItemsSource="{Binding Path=totalAttributes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+            RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
+                 SelectedItem="{Binding Path=singleTotalAttribute, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+            RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
+        </ListBox>
+        <Label Content="Chosen Features List:" Margin="220,150,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <ListBox x:Name="chosenList" x:FieldModifier="private" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="250,0,0,10" Height="250" Width="150"
+                 SelectionChanged="RaiseChosenListChangedEvent"
+                 ItemsSource="{Binding Path=chosenAttributes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+            RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
+        </ListBox>
+        <!--TODO BUTTONS -> ICommand -->
     </Grid>
 </UserControl>
