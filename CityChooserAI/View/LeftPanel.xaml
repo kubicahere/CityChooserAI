@@ -28,6 +28,13 @@
                  ItemsSource="{Binding Path=chosenAttributes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
         </ListBox>
-        <!--TODO BUTTONS -> ICommand -->
+        <Button x:Name="addFeatureButton" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,250,0,10" Width="50"
+                Command="{Binding AddFeatureClick, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+            RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
+        </Button>
+        <Button x:Name="removeFeatureButton" Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,300,0,10" Width="50"
+                Command="{Binding RemoveFeatureClick, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+            RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
+        </Button>
     </Grid>
 </UserControl>
