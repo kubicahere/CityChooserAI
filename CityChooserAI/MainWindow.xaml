@@ -18,7 +18,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <vw:LeftPanel Continents="{Binding mainPanel.continents}" CurrentContinent="{Binding mainPanel.selectedContinent, Mode=TwoWay}"
-                      TotalAttributesSource="{Binding mainPanel.totalAttributes}" CurrentTotalAtrributesSource="{Binding mainPanel.singleTotalAttribute, Mode=TwoWay}"
+                      TotalAttributesSource="{Binding mainPanel.totalAttributes}" CurrentTotalAttributesSource="{Binding mainPanel.singleTotalAttribute, Mode=TwoWay}"
                       ChosenAttributesSource="{Binding mainPanel.chosenAttributes}" CurrentChosenAttributeSource="{Binding mainPanel.singleChosenAttribute, Mode=TwoWay}"
                       AddFeature="{Binding addFeatureClick}"
                       RemoveFeature="{Binding removeFeatureClick }">

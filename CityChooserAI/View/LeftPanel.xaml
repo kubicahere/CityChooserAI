@@ -19,7 +19,7 @@
                  SelectionChanged="RaiseTotalItemChanged"
                  ItemsSource="{Binding Path=TotalAttributesSource, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
-                 SelectedItem="{Binding Path=CurrentTotalAttributeSource, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                 SelectedItem="{Binding Path=CurrentTotalAttributesSource, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
         </ListBox>
         <Label Content="Chosen Features List:" Margin="220,150,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>

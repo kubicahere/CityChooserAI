@@ -34,8 +34,8 @@ namespace CityChooserAI.View
         //listbox with every element
         public static readonly DependencyProperty TotalAttributesSourceProperty = DependencyProperty.Register(
             "TotalAttributesSource", typeof(ObservableCollection<string>), typeof(LeftPanel), new FrameworkPropertyMetadata(null));
-        public static readonly DependencyProperty CurrentTotalAttributeProperty = DependencyProperty.Register(
-            "CurrentTotalAttributeSource", typeof(string), typeof(LeftPanel), new FrameworkPropertyMetadata(null));
+        public static readonly DependencyProperty CurrentTotalAttributesProperty = DependencyProperty.Register(
+            "CurrentTotalAttributesSource", typeof(string), typeof(LeftPanel), new FrameworkPropertyMetadata(null));
         public static readonly DependencyProperty ChosenAttributesSourceProperty = DependencyProperty.Register(
             "ChosenAttributesSource", typeof(ObservableCollection<string>), typeof(LeftPanel), new FrameworkPropertyMetadata(null));
         public static readonly DependencyProperty CurrentChosenAttributeSourceProperty = DependencyProperty.Register(
@@ -62,10 +62,10 @@ namespace CityChooserAI.View
             get { return (ObservableCollection<string>)GetValue(TotalAttributesSourceProperty); }
             set { SetValue(TotalAttributesSourceProperty, value); }
         }
-        public string CurrentTotalAtrributesSource
+        public string CurrentTotalAttributesSource
         {
-            get { return (string)GetValue(CurrentTotalAttributeProperty); }
-            set { SetValue(CurrentTotalAttributeProperty, value); }
+            get { return (string)GetValue(CurrentTotalAttributesProperty); }
+            set { SetValue(CurrentTotalAttributesProperty, value); }
         }
         public ObservableCollection<string> ChosenAttributesSource
         {
