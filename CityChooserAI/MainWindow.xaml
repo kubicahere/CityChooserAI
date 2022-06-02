@@ -4,9 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CityChooserAI"
+        xmlns:vw="clr-namespace:CityChooserAI.View"
+        xmlns:vm="clr-namespace:CityChooserAI.ViewModel"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+    <Window.Resources>
+        <vm:MainViewModel x:Key="ViewModel"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource ViewModel}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="600"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <vw:LeftPanel Continents="{Binding mainPanel.continents}" CurrentContinent="{Binding mainPanel.selectedContinent, Mode=TwoWay}"
+                      TotalAttributesSource="{Binding mainPanel.totalAttributes}" CurrentTotalAtrributesSource="{Binding mainPanel.singleTotalAttribute, Mode=TwoWay}"
+                      ChosenAttributesSource="{Binding mainPanel.chosenAttributes}" CurrentChosenAttributeSource="{Binding mainPanel.singleChosenAttribute, Mode=TwoWay}"
+                      AddFeature="{Binding addFeatureClick}"
+                      RemoveFeature="{Binding removeFeatureClick }">
+            
+        </vw:LeftPanel>
     </Grid>
 </Window>

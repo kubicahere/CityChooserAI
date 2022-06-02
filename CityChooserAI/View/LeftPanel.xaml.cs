@@ -97,15 +97,61 @@ namespace CityChooserAI.View
             add { AddHandler(ContinentChangedEvent, value); }
             remove { RemoveHandler(ContinentChangedEvent, value); }
         }
-        void RaiseContinentChangedEvent(object sender, SelectionChangedEventArgs e)
+        void RaiseContinentChanged(object sender, SelectionChangedEventArgs e)
         {
             RoutedEventArgs args = new RoutedEventArgs(ContinentChangedEvent);
             RaiseEvent(args);
         }
         //listboxes
-         
-
-
+        public static readonly RoutedEvent CurrentTotalItemChangedEvent =
+            EventManager.RegisterRoutedEvent("OtherTotalItemSelected", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(LeftPanel));
+        public event RoutedEventHandler CurrentTotalItemChanged
+        {
+            add { AddHandler(CurrentTotalItemChangedEvent, value); }
+            remove { RemoveHandler(CurrentTotalItemChangedEvent, value); }
+        }
+        void RaiseTotalItemChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RoutedEventArgs args = new RoutedEventArgs(CurrentTotalItemChangedEvent);
+            RaiseEvent(args);
+        }
+        public static readonly RoutedEvent CurrentChosenItemChangedEvent =
+            EventManager.RegisterRoutedEvent("OtherChosenItemSelected", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(LeftPanel));
+        public event RoutedEventHandler CurrentChosenItemChanged
+        {
+            add { AddHandler(CurrentChosenItemChangedEvent, value); }
+            remove { RemoveHandler(CurrentChosenItemChangedEvent, value); }
+        }
+        void RaiseChosenItemChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RoutedEventArgs args = new RoutedEventArgs(CurrentChosenItemChangedEvent);
+            RaiseEvent(args);
+        }
+        //buttons
+        public static readonly RoutedEvent AddClickButtonEvent =
+            EventManager.RegisterRoutedEvent("OtherAddClickButton", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(LeftPanel));
+        public event RoutedEventHandler AddClickButton
+        {
+            add { AddHandler(AddClickButtonEvent, value); }
+            remove { RemoveHandler(AddClickButtonEvent, value); }
+        }
+        void RaiseAddClickButton(object sender, SelectionChangedEventArgs e)
+        {
+            RoutedEventArgs args = new RoutedEventArgs(AddClickButtonEvent);
+            RaiseEvent(args);
+        }
+        public static readonly RoutedEvent RemoveClickButtonEvent =
+            EventManager.RegisterRoutedEvent("OtherRemoveClickButton", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(LeftPanel));
+        public event RoutedEventHandler RemoveClickButton
+        {
+            add { AddHandler(RemoveClickButtonEvent, value); }
+            remove { RemoveHandler(RemoveClickButtonEvent, value); }
+        }
+        void RaiseRemoveClickButton(object sender, SelectionChangedEventArgs e)
+        {
+            RoutedEventArgs args = new RoutedEventArgs(RemoveClickButtonEvent);
+            RaiseEvent(args);
+        }
 
         #endregion
     }

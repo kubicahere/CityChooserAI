@@ -8,34 +8,35 @@
              d:DesignHeight="450" d:DesignWidth="600" Background="White">
     <Grid>
         <ComboBox x:Name="continentName" x:FieldModifier="private" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="10,50,0,0" Width="150"
-                  SelectionChanged="RaiseContinentChangedEvent"
-                  ItemsSource="{Binding Path=continents, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                  SelectionChanged="RaiseContinentChanged"
+                  ItemsSource="{Binding Path=Continents, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
-                  SelectedItem="{Binding Path=selectedContinent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                  SelectedItem="{Binding Path=CurrentContinent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
         </ComboBox>
         <Label Content="Feature List:" Margin="10,150,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <ListBox x:Name="featureList" x:FieldModifier="private" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" Height="250" Width="150"
-                 SelectionChanged="RaiseFeatureListChangedEvent"
-                 ItemsSource="{Binding Path=totalAttributes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                 SelectionChanged="RaiseTotalItemChanged"
+                 ItemsSource="{Binding Path=TotalAttributesSource, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
-                 SelectedItem="{Binding Path=singleTotalAttribute, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                 SelectedItem="{Binding Path=CurrentTotalAttributeSource, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
         </ListBox>
         <Label Content="Chosen Features List:" Margin="220,150,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <ListBox x:Name="chosenList" x:FieldModifier="private" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="250,0,0,10" Height="250" Width="150"
-                 SelectionChanged="RaiseChosenListChangedEvent"
-                 ItemsSource="{Binding Path=chosenAttributes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                 SelectionChanged="RaiseChosenItemChanged"
+                 ItemsSource="{Binding Path=ChosenAttributesSource, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+            RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
+                 SelectedItem="{Binding Path=CurrentChosenAttributeSource, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
         </ListBox>
         <Button x:Name="addFeatureButton" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,250,0,10" Width="50"
-                Command="{Binding AddFeatureClick, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                Command="{Binding AddFeature, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
         </Button>
         <Button x:Name="removeFeatureButton" Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,300,0,10" Width="50"
-                Command="{Binding RemoveFeatureClick, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                Command="{Binding RemoveFeature, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
         </Button>
     </Grid>
-    <!--TODO DEPENDECIES ETC XAML.CS-->
 </UserControl>
