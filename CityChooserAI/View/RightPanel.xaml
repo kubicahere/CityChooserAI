@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CityChooserAI.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="300" Background="White">
+             d:DesignHeight="450" d:DesignWidth="300">
     <Grid>
-        <Button x:Name="calculateButton" Content="Calculate!" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112.5,25,0,10" Width="75" Height="30"
+        <Button x:Name="calculateButton" Content="Calculate!" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,27,0,0" Width="100" Height="30"
                 Command="{Binding CheckCl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
         </Button>
