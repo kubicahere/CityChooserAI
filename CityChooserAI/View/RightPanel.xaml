@@ -7,20 +7,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="300" Background="White">
     <Grid>
-        <!--
         <Button x:Name="calculateButton" Content="Calculate!" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112.5,25,0,10" Width="75" Height="30"
-                Command="{Binding checkClick, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                Command="{Binding CheckCl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
         </Button>
 
         <ListBox x:Name="featureList" x:FieldModifier="private" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="25,0,0,10" Height="300" Width="250"
-                 SelectionChanged="RaiseFeatureListChangedEvent"
-                 ItemsSource="{Binding Path=totalAttributes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                 SelectionChanged="RaiseCalcCitiesChanged"
+                 ItemsSource="{Binding Path=CalcCities, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
-                 SelectedItem="{Binding Path=singleTotalAttribute, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                 SelectedItem="{Binding Path=CalcCitiesSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
         </ListBox>
-        
-        -->
     </Grid>
 </UserControl>

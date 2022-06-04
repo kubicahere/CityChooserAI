@@ -8,7 +8,7 @@
         xmlns:vm="clr-namespace:CityChooserAI.ViewModel"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="900">
     <Window.Resources>
         <vm:MainViewModel x:Key="ViewModel"/>
     </Window.Resources>
@@ -21,8 +21,10 @@
                       TotalAttributesSource="{Binding mainPanel.totalAttributes}" CurrentTotalAttributesSource="{Binding mainPanel.singleTotalAttribute, Mode=TwoWay}"
                       ChosenAttributesSource="{Binding mainPanel.chosenAttributes}" CurrentChosenAttributeSource="{Binding mainPanel.singleChosenAttribute, Mode=TwoWay}"
                       AddFeature="{Binding addFeatureClick}"
-                      RemoveFeature="{Binding removeFeatureClick }">
-            
+                      RemoveFeature="{Binding removeFeatureClick}">
+            <!--TODO TRIGGERS-->
         </vw:LeftPanel>
+        <vw:RightPanel Grid.Column="1" CheckCl="{Binding checkClick}" CalcCities="{Binding resultsPanel.resultPlayersList}" CalcCitiesSelected="{Binding resultsPanel.selectedResultCity, Mode=TwoWay}"/>
+        <!--TODO TRIGGERS-->
     </Grid>
 </Window>
