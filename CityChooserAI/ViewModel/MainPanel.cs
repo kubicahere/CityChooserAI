@@ -20,6 +20,7 @@ namespace CityChooserAI.ViewModel
         {
             totalAttributes = LoadTotalAttributes();
             chosenAttributes = new ObservableCollection<string>();
+            _selectedContinent = _continets[0];
             singleTotalAttribute = null;
             singleChosenAttribute = null;
         }

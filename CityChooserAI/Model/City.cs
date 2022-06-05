@@ -6,7 +6,39 @@ using System.Threading.Tasks;
 
 namespace CityChooserAI.Model
 {
-    internal class City
+    public class City
     {
+        public City(string[] attributes)
+        {
+            attr = attributes;
+        }
+        #region Attributes
+        private string[] _attr;
+        public string[] attr
+        {
+            get { return _attr; }
+            set { _attr = value; }
+        }
+        private double _totalScore;
+        public double totalScore
+        {
+            get { return _totalScore; }
+            set { _totalScore = value; }
+        }
+        #endregion
+        #region Methods
+        private double CalcScore(int[] indexes)
+        {
+            double score = 0;
+            for(int i = 0; i < indexes.Length; i++)
+            {
+                score += Convert.ToDouble(attr[indexes[i]]);
+            }
+            totalScore = Math.Round(score, 2);
+            return score;
+        }
+
+
+        #endregion
     }
 }
