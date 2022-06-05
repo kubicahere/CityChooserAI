@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CityChooserAI.View" 
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="600" Background="White">
+             d:DesignHeight="450" d:DesignWidth="600">
     <Grid>
         <Label Content="Choose continent:" Margin="10,15,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <ComboBox x:Name="continentName" x:FieldModifier="private" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="10,50,0,0" Width="150"
@@ -21,21 +21,21 @@
                  ItemsSource="{Binding Path=TotalAttributesSource, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
                  SelectedItem="{Binding Path=CurrentTotalAttributesSource, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
-            RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
+            RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" BorderThickness="0.5,0.5,0.5,0.5" BorderBrush="Gray" SnapsToDevicePixels="True">
         </ListBox>
-        <Label Content="Chosen Features List:" Margin="220,120,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <ListBox x:Name="chosenList" x:FieldModifier="private" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="250,0,0,10" Height="250" Width="150"
+        <Label Content="Chosen Features List:" Margin="283,120,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <ListBox x:Name="chosenList" x:FieldModifier="private" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="283,0,0,10" Height="250" Width="150"
                  SelectionChanged="RaiseChosenItemChanged"
                  ItemsSource="{Binding Path=ChosenAttributesSource, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
                  SelectedItem="{Binding Path=CurrentChosenAttributeSource, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
-            RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
+            RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" BorderThickness="0.5,0.5,0.5,0.5" BorderBrush="Gray">
         </ListBox>
-        <Button x:Name="addFeatureButton" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,250,0,10" Width="50"
+        <Button x:Name="addFeatureButton" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,250,0,0" Width="70"
                 Command="{Binding AddFeature, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
         </Button>
-        <Button x:Name="removeFeatureButton" Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,300,0,10" Width="50"
+        <Button x:Name="removeFeatureButton" Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,300,0,0" Width="70"
                 Command="{Binding RemoveFeature, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
         </Button>
