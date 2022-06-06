@@ -54,6 +54,30 @@ namespace CityChooserAI.ViewModel
         #endregion
 
         #region ICommands
+        private ICommand _continentChanged = null;
+        public ICommand continentChanged
+        {
+            get
+            {
+                if(_continentChanged == null)
+                {
+                    _continentChanged = new RelayCommand(mainPanel.continentChanged, arg => true);
+                }
+                return _continentChanged;
+            }
+        }
+        private ICommand _singleCityInfo = null;
+        public ICommand singleCityInfo
+        {
+            get
+            {
+                if(_singleCityInfo == null)
+                {
+                    _singleCityInfo = new RelayCommand(resultsPanel.singleCityData, arg => true);
+                }
+                return _singleCityInfo;
+            }
+        }
         private ICommand _addFeatureClick = null;
         public ICommand addFeatureClick
         {

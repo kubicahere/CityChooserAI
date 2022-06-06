@@ -27,7 +27,7 @@ namespace CityChooserAI.Model
         }
         #endregion
         #region Methods
-        private double CalcScore(int[] indexes)
+        public double CalcScore(int[] indexes)
         {
             double score = 0;
             for(int i = 0; i < indexes.Length; i++)

@@ -9,7 +9,7 @@
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="City Chooser AI" Height="450" Width="900">
+        Title="City Chooser AI" Height="450" Width="800">
     <Window.Resources>
         <vm:MainViewModel x:Key="ViewModel"/>
     </Window.Resources>
@@ -23,9 +23,18 @@
                       ChosenAttributesSource="{Binding mainPanel.chosenAttributes}" CurrentChosenAttributeSource="{Binding mainPanel.singleChosenAttribute, Mode=TwoWay}"
                       AddFeature="{Binding addFeatureClick}"
                       RemoveFeature="{Binding removeFeatureClick}" Loaded="LeftPanel_Loaded">
-            <!--TODO TRIGGERS-->
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="ContinentChanged">
+                    <i:InvokeCommandAction Command="{Binding continentChanged}"/>
+                </i:EventTrigger>
+                
+            </i:Interaction.Triggers>
         </vw:LeftPanel>
-        <vw:RightPanel Grid.Column="1" CheckCl="{Binding checkClick}" CalcCities="{Binding resultsPanel.resultPlayersList}" CalcCitiesSelected="{Binding resultsPanel.selectedResultCity, Mode=TwoWay}"/>
-        <!--TODO TRIGGERS-->
+        <vw:RightPanel Grid.Column="1" CheckCl="{Binding checkClick}" CalcCities="{Binding resultsPanel.resultCityList}" CalcCitiesSelected="{Binding resultsPanel.selectedResultCity, Mode=TwoWay}"/>
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="singleCityData">
+                <i:InvokeCommandAction Command="{Binding singleCityInfo}"/>
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
     </Grid>
 </mah:MetroWindow>

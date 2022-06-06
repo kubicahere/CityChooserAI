@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -45,9 +46,25 @@ namespace CityChooserAI.Model
             //TODO USUWANIE MIAST Z KONTYNENTEM ROZNYM OD WYBRANEGO 
             foreach(City ct in cityList.ToList())
             {
-                //if (Convert.ToInt32(ct.attr[continentIndex]))
+                if(ct.attr[continentIndex] != selectedContinent)
+                {
+                    cityList.Remove(ct);
+                }
             }
             return cityList;
+        }
+        public static List<City> Calculate(ObservableCollection<string> attributes, List<City> listOfCities)
+        {
+            int[] attributesIndexes = new int[attributes.Count];
+            for(int i = 0; i < attributes.Count; i++)
+            {
+                attributesIndexes[i] = SearchIndex(attributes.ElementAt(i), firstLine);
+            }
+            foreach(City ct in listOfCities)
+            {
+                ct.CalcScore(attributesIndexes);
+            }
+            return listOfCities;
         }
 
 
