@@ -16,7 +16,7 @@
                  SelectionChanged="RaiseCalcCitiesChanged" BorderThickness="0.5,0.5,0.5,0.5" BorderBrush="Gray" SnapsToDevicePixels="True"
                  ItemsSource="{Binding Path=CalcCities, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
-                 SelectedItem="{Binding Path=CalcCitiesSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                 SelectedItem="{Binding Path=singleCityData, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
         </ListBox>
     </Grid>

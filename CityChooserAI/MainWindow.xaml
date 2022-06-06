@@ -30,11 +30,12 @@
                 
             </i:Interaction.Triggers>
         </vw:LeftPanel>
-        <vw:RightPanel Grid.Column="1" CheckCl="{Binding checkClick}" CalcCities="{Binding resultsPanel.resultCityList}" CalcCitiesSelected="{Binding resultsPanel.selectedResultCity, Mode=TwoWay}"/>
-        <i:Interaction.Triggers>
-            <i:EventTrigger EventName="singleCityData">
-                <i:InvokeCommandAction Command="{Binding singleCityInfo}"/>
-            </i:EventTrigger>
-        </i:Interaction.Triggers>
+        <vw:RightPanel Grid.Column="1" CheckCl="{Binding checkClick}" CalcCities="{Binding resultsPanel.resultCityList}" CalcCitiesSelected="{Binding resultsPanel.selectedResultCity, Mode=TwoWay}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="CalcCitiesChanged">
+                    <i:InvokeCommandAction Command="{Binding singleCityInfo}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </vw:RightPanel>
     </Grid>
 </mah:MetroWindow>
