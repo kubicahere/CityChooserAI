@@ -66,6 +66,7 @@ namespace CityChooserAI.ViewModel
                 return;
             }
 
+            resultCityList.Clear();
 
             using (var reader = new StreamReader(@"QualityOfLifeDataFrame.csv")) // Add the .csv file to Relase folder!
             {
