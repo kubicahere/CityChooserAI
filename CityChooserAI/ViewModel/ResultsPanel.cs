@@ -23,7 +23,7 @@ namespace CityChooserAI.ViewModel
         #region Attributes
         private List<City> _cityList = new List<City>();
         private List<City> _tmpList;
-        private ObservableCollection<string> _resultPlayersList = new ObservableCollection<string>();
+        private ObservableCollection<string> _resultCityList = new ObservableCollection<string>();
         private string _selectedResultCity;
         #endregion
         #region Getters & setters
@@ -37,13 +37,13 @@ namespace CityChooserAI.ViewModel
             get { return _tmpList; }
             set { _tmpList = value; }
         }
-        public ObservableCollection<string> resultPlayersList
+        public ObservableCollection<string> resultCityList
         {
-            get { return _resultPlayersList; }
+            get { return _resultCityList; }
             set 
             { 
-                resultPlayersList = value;
-                OnPropertyChanged(nameof(resultPlayersList));
+                resultCityList = value;
+                OnPropertyChanged(nameof(resultCityList));
             }
         }
         public string selectedResultCity
@@ -204,8 +204,9 @@ namespace CityChooserAI.ViewModel
                 for(int i = 0; i < 5; i++)
                 {
                     var index = Score.IndexOf(TOP5[i]);
-                    Debug.WriteLine(CityNames[index] + "," + CountryNames[index] + ", " + Continents[index] + ": " + TOP5[i]);
+                    //Debug.WriteLine(CityNames[index] + "," + CountryNames[index] + ", " + Continents[index] + ": " + TOP5[i]);
                     resultMessage += "\n" + CityNames[index] + "," + CountryNames[index] + ", " + Continents[index] + ": " + TOP5[i];
+                    resultCityList.Add(CityNames[index]);
                 }
 
                 MessageBox.Show(resultMessage);
@@ -216,13 +217,15 @@ namespace CityChooserAI.ViewModel
 
             }
 
+
             tmpList = new List<City>(cityList);
-            resultPlayersList.Clear();
+            //resultCityList.Clear();
             // TODO AI FUNCTIONS HERE
         }
         public void singleCityData(object sender)
         {
             //TODO CREATE RESULT WINDOW WITH DATA OF SELECTED CITY
+            MessageBox.Show("XD");
         }
 
 

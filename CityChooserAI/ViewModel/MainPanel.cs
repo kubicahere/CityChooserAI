@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CityChooserAI.ViewModel
 {
@@ -89,6 +90,10 @@ namespace CityChooserAI.ViewModel
         }
         #endregion
         #region Methods
+        public void continentChanged(object sender)
+        {
+            MessageBox.Show(selectedContinent);
+        }
         public ObservableCollection<string> LoadTotalAttributes()
         {
             ObservableCollection<string> elements = new ObservableCollection<string>();
