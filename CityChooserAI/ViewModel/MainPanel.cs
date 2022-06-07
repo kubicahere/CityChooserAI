@@ -90,10 +90,7 @@ namespace CityChooserAI.ViewModel
         }
         #endregion
         #region Methods
-        public void continentChanged(object sender)
-        {
-            MessageBox.Show(selectedContinent);
-        }
+        public void continentChanged(object sender){}
         public ObservableCollection<string> LoadTotalAttributes()
         {
             ObservableCollection<string> elements = new ObservableCollection<string>();
