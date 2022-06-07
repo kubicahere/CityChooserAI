@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CityChooserAI.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,10 +20,17 @@ namespace CityChooserAI.View
     /// </summary>
     public partial class OutputDataWindow : Window
     {
-        public OutputDataWindow()
+        public OutputDataWindow(City city, string continent)
         {
             InitializeComponent();
+            
             //SetInfo(); //TODO
+        }
+        private string _cityContinent;
+        public string cityContinent
+        {
+            get { return _cityContinent; }
+            set { _cityContinent = value; }
         }
 
     }

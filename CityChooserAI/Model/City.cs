@@ -37,6 +37,15 @@ namespace CityChooserAI.Model
             totalScore = Math.Round(score, 2);
             return score;
         }
+        public override string ToString()
+        {
+            string res = string.Empty;
+            for(var i = 0; i < attr.Length; i++)
+            {
+                res += attr[i].ToString();
+            }
+            return res;
+        }
 
 
         #endregion
