@@ -200,32 +200,15 @@ namespace CityChooserAI.ViewModel
                         default:
                             break;
                     }
-
-                    //Debug.WriteLine(CityNames[i] + ": " + Score[i]);
                 }
                 var TOP5 = Score.OrderByDescending(x => x).Take(5).ToArray();
 
-                string resultMessage = "TOP 5:";
-                Debug.WriteLine("TOP 5:");
                 for(int i = 0; i < 5; i++)
                 {
                     var index = Score.IndexOf(TOP5[i]);
                     cityList.Add(new City(valuesOfAllCities.ElementAt(index)));
-                    //Debug.WriteLine(CityNames[index] + "," + CountryNames[index] + ", " + Continents[index] + ": " + TOP5[i]);
-                    resultMessage += "\n" + CityNames[index] + "," + CountryNames[index] + ", " + Continents[index] + ": " + TOP5[i];
-                    //tmpList.Add(CityNames[index]);
                     resultCityList.Add(CityNames[index]);
                 }
-                foreach(City city in cityList)
-                {
-                    Debug.WriteLine(city);
-                }
-                MessageBox.Show(resultMessage);
-                Debug.WriteLine("Continent: " + MainPanel.selectedContinent);
-                Debug.WriteLine("Number of attributes: " + MainPanel.chosenAttributes.Count);
-                foreach (var element in MainPanel.chosenAttributes.ToArray()) Debug.Write(element + ", ");
-                Debug.Write("\n");
-
             }
 
         }
