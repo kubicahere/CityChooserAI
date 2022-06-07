@@ -68,7 +68,7 @@ namespace CityChooserAI.ViewModel
             }
 
             resultCityList.Clear();
-
+            cityList = new List<City>();
             using (var reader = new StreamReader(@"QualityOfLifeDataFrame.csv")) // Add the .csv file to Relase folder!
             {
                 List<string> P1 = new List<string>(); //properties
@@ -217,7 +217,7 @@ namespace CityChooserAI.ViewModel
             if (selectedResultCity == null) return;
 
             int selectedIndex = resultCityList.IndexOf(selectedResultCity);
-            OutputDataWindow ODW = new OutputDataWindow(cityList[selectedIndex], MainPanel.selectedContinent);
+            OutputDataWindow ODW = new OutputDataWindow(cityList[selectedIndex]);
             ODW.Show();
         }
 

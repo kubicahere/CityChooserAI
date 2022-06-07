@@ -13,12 +13,12 @@
             <RowDefinition Height="166*"/>
         </Grid.RowDefinitions>
         <Label Content="Scores:" HorizontalAlignment="Left" Margin="47,198,0,0" VerticalAlignment="Top" Width="151"/>
-        <ListBox x:Name="AttributesKey1" Margin="115,198,546,42" BorderThickness="0.5,0.5,0.5,0.5" BorderBrush="Gray" Grid.RowSpan="2"/>
-        <ListBox x:Name="AttributesValue1" Margin="259,198,491,42" BorderThickness="0.5,0.5,0.5,0.5" BorderBrush="Gray" Grid.RowSpan="2"/>
-        <ListBox x:Name="AttributesKey2" Margin="429,198,232,42" BorderThickness="0.5,0.5,0.5,0.5" BorderBrush="Gray" Grid.RowSpan="2"/>
-        <ListBox x:Name="AttributesValue2" Margin="573,198,177,42" BorderThickness="0.5,0.5,0.5,0.5" BorderBrush="Gray" Grid.RowSpan="2"/>
+        <ListBox x:Name="AttributesKey1" Margin="115,198,546,35" BorderThickness="0.5,0.5,0.5,0.5" BorderBrush="Gray" Grid.RowSpan="2" IsEnabled="False"/>
+        <ListBox x:Name="AttributesValue1" Margin="259,198,491,35" BorderThickness="0.5,0.5,0.5,0.5" BorderBrush="Gray" Grid.RowSpan="2" IsEnabled="False"/>
+        <ListBox x:Name="AttributesKey2" Margin="429,198,232,35" BorderThickness="0.5,0.5,0.5,0.5" BorderBrush="Gray" Grid.RowSpan="2" IsEnabled="False"/>
+        <ListBox x:Name="AttributesValue2" Margin="573,198,177,35" BorderThickness="0.5,0.5,0.5,0.5" BorderBrush="Gray" Grid.RowSpan="2" IsEnabled="False"/>
         <TextBlock x:Name="CityName" HorizontalAlignment="Left" Margin="126,8,0,0" TextWrapping="Wrap" Text="Warszawa" VerticalAlignment="Top" Foreground="White" FontSize="48"/>
-        <TextBlock x:Name="CountryName" HorizontalAlignment="Left" Margin="126,67,0,0" TextWrapping="Wrap" Text="Polska" VerticalAlignment="Top" Foreground="White" FontSize="36"/>
+        <TextBlock x:Name="CountryName" HorizontalAlignment="Left" Margin="117,67,0,0" TextWrapping="Wrap" Text="Polska" VerticalAlignment="Top" Foreground="White" FontSize="32"/>
         <TextBlock x:Name="ContinentName" HorizontalAlignment="Left" Margin="126,115,0,0" TextWrapping="Wrap" Text="Europa" VerticalAlignment="Top" Foreground="White" FontSize="24"/>
     </Grid>
 </Window>

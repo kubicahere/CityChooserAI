@@ -1,6 +1,7 @@
 ﻿using CityChooserAI.Model;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,11 +21,11 @@ namespace CityChooserAI.View
     /// </summary>
     public partial class OutputDataWindow : Window
     {
-        public OutputDataWindow(City city, string continent)
+        public OutputDataWindow(City city)
         {
             InitializeComponent();
             
-            //SetInfo(); //TODO
+            SetInfo(city);
         }
         private string _cityContinent;
         public string cityContinent
@@ -32,6 +33,44 @@ namespace CityChooserAI.View
             get { return _cityContinent; }
             set { _cityContinent = value; }
         }
+        private string[] _tabAttributes;
+        public string[] tabAttributes
+        {
+            get { return _tabAttributes; }
+            set { _tabAttributes = value; }
+        }
+        public void SetInfo(City city)
+        {
+            tabAttributes = city.attr;
+            CityName.Text = tabAttributes[1];
+            CountryName.Text = tabAttributes[2];
+            ContinentName.Text = tabAttributes[3];
+            CultureInfo culture = new CultureInfo("en-US");
 
+            for (int i = 0; i < Attributes.attributes.Length; i++)
+            {
+                if(i < 9)
+                {
+                    AttributesKey1.Items.Add(Attributes.attributes[i]);
+                }
+                else
+                {
+                    AttributesKey2.Items.Add(Attributes.attributes[i]);
+                }
+            }
+            for(int i = 4; i < tabAttributes.Length; i++)
+            {
+                if(i < 13)
+                {
+                    decimal x = Math.Round(Convert.ToDecimal(tabAttributes[i], culture), 0);
+                    AttributesValue1.Items.Add(x.ToString());
+                }
+                else
+                {
+                    decimal x = Math.Round(Convert.ToDecimal(tabAttributes[i], culture), 0);
+                    AttributesValue2.Items.Add(x.ToString());
+                }
+            }
+        }
     }
 }
