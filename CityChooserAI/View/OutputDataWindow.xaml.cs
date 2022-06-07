@@ -22,6 +22,8 @@ namespace CityChooserAI.View
         public OutputDataWindow()
         {
             InitializeComponent();
+            //SetInfo(); //TODO
         }
+
     }
 }

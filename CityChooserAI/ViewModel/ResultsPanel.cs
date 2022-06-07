@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Diagnostics;
 using System.Globalization;
+using CityChooserAI.View;
 
 namespace CityChooserAI.ViewModel
 {
@@ -22,7 +23,7 @@ namespace CityChooserAI.ViewModel
         }
         #region Attributes
         private List<City> _cityList = new List<City>();
-        private List<City> _tmpList;
+        private List<string> _tmpList;
         private ObservableCollection<string> _resultCityList = new ObservableCollection<string>();
         private string _selectedResultCity;
         #endregion
@@ -32,7 +33,7 @@ namespace CityChooserAI.ViewModel
             get { return _cityList; }
             set { _cityList = value; }
         }
-        public List<City> tmpList
+        public List<string> tmpList
         {
             get { return _tmpList; }
             set { _tmpList = value; }
@@ -42,7 +43,7 @@ namespace CityChooserAI.ViewModel
             get { return _resultCityList; }
             set 
             { 
-                resultCityList = value;
+                _resultCityList = value;
                 OnPropertyChanged(nameof(resultCityList));
             }
         }
@@ -52,7 +53,7 @@ namespace CityChooserAI.ViewModel
             set
             {
                 _selectedResultCity = value;
-                OnPropertyChanged(nameof(selectedResultCity));
+                OnPropertyChanged(nameof(resultCityList));
             }
         }
         #endregion
@@ -200,13 +201,14 @@ namespace CityChooserAI.ViewModel
                 var TOP5 = Score.OrderByDescending(x => x).Take(5).ToArray();
 
                 string resultMessage = "TOP 5:";
-
+                tmpList = new List<string>();
                 Debug.WriteLine("TOP 5:");
                 for(int i = 0; i < 5; i++)
                 {
                     var index = Score.IndexOf(TOP5[i]);
                     //Debug.WriteLine(CityNames[index] + "," + CountryNames[index] + ", " + Continents[index] + ": " + TOP5[i]);
                     resultMessage += "\n" + CityNames[index] + "," + CountryNames[index] + ", " + Continents[index] + ": " + TOP5[i];
+                    tmpList.Add(CityNames[index]);
                     resultCityList.Add(CityNames[index]);
                 }
 
@@ -218,15 +220,15 @@ namespace CityChooserAI.ViewModel
 
             }
 
-
-            tmpList = new List<City>(cityList);
-            //resultCityList.Clear();
-            // TODO AI FUNCTIONS HERE
         }
         public void singleCityData(object sender)
         {
-            //TODO CREATE RESULT WINDOW WITH DATA OF SELECTED CITY
-            MessageBox.Show("XD");
+            if (selectedResultCity == null) return;
+            
+            int selectedIndex = resultCityList.IndexOf(selectedResultCity);
+            MessageBox.Show(tmpList[selectedIndex]);
+            OutputDataWindow ODW = new OutputDataWindow();
+            ODW.Show();
         }
 
 
