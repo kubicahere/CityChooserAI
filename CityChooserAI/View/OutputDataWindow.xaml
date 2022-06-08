@@ -1,9 +1,10 @@
-﻿<Window x:Class="CityChooserAI.View.OutputDataWindow"
+﻿<mah:MetroWindow x:Class="CityChooserAI.View.OutputDataWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CityChooserAI.View"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         ResizeMode="NoResize"
         mc:Ignorable="d"
         Title="OutputDataWindow" Height="500" Width="800">
@@ -21,4 +22,4 @@
         <TextBlock x:Name="CountryName" HorizontalAlignment="Left" Margin="117,67,0,0" TextWrapping="Wrap" Text="Polska" VerticalAlignment="Top" Foreground="White" FontSize="32"/>
         <TextBlock x:Name="ContinentName" HorizontalAlignment="Left" Margin="126,115,0,0" TextWrapping="Wrap" Text="Europa" VerticalAlignment="Top" Foreground="White" FontSize="24"/>
     </Grid>
-</Window>
+</mah:MetroWindow>
