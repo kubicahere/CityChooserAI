@@ -1,4 +1,5 @@
 ﻿using CityChooserAI.Model;
+using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -19,7 +20,7 @@ namespace CityChooserAI.View
     /// <summary>
     /// Interaction logic for OutputDataWindow.xaml
     /// </summary>
-    public partial class OutputDataWindow : Window
+    public partial class OutputDataWindow : MetroWindow
     {
         public OutputDataWindow(City city)
         {
