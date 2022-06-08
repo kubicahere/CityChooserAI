@@ -127,6 +127,7 @@ namespace CityChooserAI.View
             RoutedEventArgs args = new RoutedEventArgs(CurrentChosenItemChangedEvent);
             RaiseEvent(args);
         }
+
         //buttons
         public static readonly RoutedEvent AddClickButtonEvent =
             EventManager.RegisterRoutedEvent("OtherAddClickButton", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(LeftPanel));
