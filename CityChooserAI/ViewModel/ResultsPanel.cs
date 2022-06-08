@@ -141,10 +141,11 @@ namespace CityChooserAI.ViewModel
                         var line = reader.ReadLine();
                         var values = line.Split(',');
 
-                        valuesOfAllCities.Add(values);
+                        
 
                         if (values[3] == MainPanel.selectedContinent)
                         {
+                            valuesOfAllCities.Add(values);
                             P1.Add(values[AttributesIndex[0]]);
                             P2.Add(values[AttributesIndex[1]]);
                             P3.Add(values[AttributesIndex[2]]);
