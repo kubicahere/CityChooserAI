@@ -42,12 +42,13 @@ namespace CityChooserAI.View
         public void SetInfo(City city)
         {
             tabAttributes = city.attr;
+            this.Title = tabAttributes[1];
             CityName.Text = tabAttributes[1];
             CountryName.Text = tabAttributes[2];
             ContinentName.Text = tabAttributes[3];
             CultureInfo culture = new CultureInfo("en-US");
 
-            for (int i = 0; i < Attributes.attributes.Length; i++)
+            for (int i = 0; i < Attributes.attributes.Length; i++) //Add the names of attributes to column 1 & 2
             {
                 if(i < 9)
                 {
@@ -58,7 +59,7 @@ namespace CityChooserAI.View
                     AttributesKey2.Items.Add(Attributes.attributes[i]);
                 }
             }
-            for(int i = 4; i < tabAttributes.Length; i++)
+            for(int i = 4; i < tabAttributes.Length; i++) //Add the values of attributes to column 1 & 2
             {
                 if(i < 13)
                 {
